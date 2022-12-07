@@ -1,0 +1,19 @@
+
+.container{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.box1 {
+  background-color: rgb(96, 155, 135);
+  height: 200px;
+  width: 200px;
+  margin: 50px;
+  border: 2px solid;
+  padding: 12px;
+  border-radius: 7px;
+  position: absolute;
+}
