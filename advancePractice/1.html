@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,33 +10,80 @@
 
 <script>
     class List {
-    constructor(){
-        this.head = {
-            value: "something",
-            next: null
+        constructor() {
+            this.head = {
+                value: 100,
+                next: null
+            }
+            this.tail = this.head;
+            this.counter = 0
         }
-        this.tail = this.head;
-    }
-    appendNode (nodeVal) {
-        let newNode = {
-            value: nodeVal,
-            next: null
+        appendNode(nodeVal) {
+            let newNode = {
+                value: nodeVal,
+                next: null
+            }
+            this.tail.next = newNode;
+            this.tail = newNode;
+            // let count = this.counter +=1;
+            this.counter+=1;
         }
-        this.tail.next = newNode;
-        this.tail = newNode;
+        deleteNode (index) {
+            // console.log(this.head);
+            if(index > this.counter) {
+                console.log("Incorrect index")
+                return;
+            }
+            if(index === 0) {
+                this.head = this.head.next;
+            }
+            let leadNode = this.head;
+            for(let i = 0; i < index-1; i++) {
+                leadNode = leadNode.next;
+                if(i === 1) leadNode.value = 50000;
+            }
+            let newNode = leadNode.next.next;
+            leadNode.next = newNode;
+            // console.log(leadNode);
+            console.log(this.head);
+        }
     }
-}
 
-        let list = new List();
-        list.appendNode("something Special");
-        list.appendNode("something else");
-        list.appendNode("one more thing");
-    
+        // traverse() {
+            // let counter = this.head;
+            // let list = new List();
+            // console.log(this.list.tail);
+            // for (let i = 0; i < counter; i++) {
+            //     console.warn("Hi")
+            // }
+        // }
+
+        // traverse()
+    // }
+    // let list = new List();
+    let list = new List();
+    list.appendNode(200);
+    list.appendNode(300);
+    list.appendNode(400);
+    list.appendNode(500);
+    list.appendNode(600);
+    list.appendNode(700);
+    list.deleteNode(3)
+    let currentnode = list.head; 
+    for(i = 0; i < list.counter; i++) {
+        if(currentnode.value === "something else") currentnode.value = "ignore it"
+        // console.log(currentnode.value);
+        currentnode = currentnode.next;
+    }
+    // console.log(list);
+
 </script>
 
 
 <body>
-    <h1>Append object </h1>
-    
+    <h1>This list </h1>
+
+
 </body>
+
 </html>

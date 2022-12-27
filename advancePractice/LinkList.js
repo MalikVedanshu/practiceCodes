@@ -17,7 +17,6 @@ class List {
         this.tail = newNode;
     }
 }
-
         let list = new List();
         list.appendNode("something Special");
         list.appendNode("something else");
