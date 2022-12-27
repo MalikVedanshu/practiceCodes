@@ -11,7 +11,6 @@ function recursiveCountDown(n) {
         return;
     }
     consoleRecursion(n);
-    
 }
 
 function consoleRecursion(m) {
