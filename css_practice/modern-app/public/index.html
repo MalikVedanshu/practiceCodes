@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    import * as FilePond from 'filepond';
+  import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
+  import FilePondPluginImageResize from 'filepond-plugin-image-resize';
+  import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+
+  FilePond.registerPlugin(
+      FilePondPluginImagePreview,
+      FilePondPluginImageResize,
+      FilePondPluginFileEncode
+  )
+
+FilePond.parse(document.body);
+  </script>
   <title>Document</title>
 </head>
 <body>
