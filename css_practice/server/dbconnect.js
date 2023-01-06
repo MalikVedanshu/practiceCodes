@@ -6,7 +6,7 @@ async function mongodbConnect () {
         console.log("Server is now connected");
     }
     catch(error) {
-
+        console.log(error)
     }
 }
 mongodbConnect();

@@ -7,7 +7,9 @@ const schema = new mongoose.Schema({
     },
     file: {
         type: Array,
-        default: []
+        default: [],
+        required: true
+        
     }
 })
 
