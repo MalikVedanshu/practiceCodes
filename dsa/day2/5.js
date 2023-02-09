@@ -18,6 +18,7 @@
 // Input: nums = [5,4,-1,7,8]
 // Output: 23
 // Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -38,44 +39,42 @@ var maxSubArray = function(nums) {
         sumFromRight += nums[nums.length - i - 1];
         rightRangeSums[nums.length - i - 1] = sumFromRight;
     }
+    console.log(`Left range sum : 
+    ${leftRangeSums}`, `
+    Right range sum :
+    ${rightRangeSums}`);
     let maxInTheLeft = Math.max(...leftRangeSums);
     let maxInTheRight = Math.max(...rightRangeSums);
 
     let myRange = [];
-    let finalRange = [];
     if(maxInTheLeft > maxInTheRight) {
 
         let theIndex;
-        for(let k = 0; k < leftRangeSums.length; k++) {
-            if(leftRangeSums[k] === maxInTheLeft) {
-                theIndex = k;
+        leftRangeSums.forEach((ele,idx) => {
+            if(ele === maxInTheLeft){
+                theIndex = idx;
             }
-        }
+        })
         let calcSum = 0;
-        finalRange = nums.slice(0, theIndex+1);
+
         for(let j = theIndex; j >= 0; j--) {
             calcSum += nums[j]
             myRange.push(calcSum);
         }
+        
     } else {
+
         let theIndex = rightRangeSums.findIndex(ele => ele === maxInTheRight);
         let calcSum = 0;
-        finalRange = nums.slice( theIndex, nums.length);
 
-        for(let j = theIndex-1; j < nums.length; j++) {
+        for(let j = theIndex; j < nums.length; j++) {
             calcSum += nums[j]
             myRange.push(calcSum);
         }
     }
+    console.log(`Calculated range is ${myRange}`);
     
-    let subsetMax =  Math.max(...myRange);
-    let individualMax = Math.max(...finalRange);
-    if(subsetMax >= individualMax) {
-        return subsetMax;
-    } else {
-        return individualMax;
-    }
-}
+    return Math.max(...myRange);
+};
 
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
-
+console.log(maxSubArray([1,1,-4,4,-1,2,1,-7,4]))
