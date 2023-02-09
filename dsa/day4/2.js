@@ -32,3 +32,27 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 
+var twoSum = function(nums, target) {
+    let obj = {}
+    for(let i = 0; i < nums.length; i++) {
+        if(obj[`${target - nums[i]}`] !== undefined) {
+            obj[`${target - nums[i]}`].push(i)
+        } else {
+            obj[`${target - nums[i]}`] = [i];
+        } 
+    }
+    
+    let output  = [];
+    for(let j = 0; j < nums.length; j++) {
+        if(obj[nums[j]] !== undefined) {
+            output.push(obj[nums[j]])
+        }
+    }
+    return output.sort();
+    
+    
+    
+};
+
+console.log(twoSum([3,2,4],6));
+
