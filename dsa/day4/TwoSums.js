@@ -41,11 +41,17 @@ var twoSum = function(nums, target) {
             obj[`${target - nums[i]}`] = [i];
         } 
     }
+    console.log(obj);
     
     let output  = [];
     for(let j = 0; j < nums.length; j++) {
-        if(obj[nums[j]] !== undefined) {
-            output.push(obj[nums[j]])
+        if(obj[nums[j]] !== undefined && obj[target - nums[j]] !== undefined && obj[nums[j]] !== obj[target - nums[j]]) {
+            output.push(obj[nums[j]][0])
+        } else {
+            if(obj[nums[j]] !== undefined && obj[nums[j]].length === 2 && target/2 === nums[j] ) {
+                output = obj[nums[j]]
+                break;
+            }
         }
     }
     return output.sort();
@@ -54,5 +60,5 @@ var twoSum = function(nums, target) {
     
 };
 
-console.log(twoSum([3,2,4],6));
+console.log(twoSum([3,3],6));
 
