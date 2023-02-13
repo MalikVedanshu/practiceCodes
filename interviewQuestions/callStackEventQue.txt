@@ -1,0 +1,57 @@
+The call stack is a data structure used by JavaScript (and many other programming languages) to keep track of the function calls that are executed in your code. It's essentially a stack of functions, with the most recently called function at the top of the stack, and the first called function at the bottom.
+Each time a function is called, it's added to the top of the call stack. When a function returns, it's removed from the top of the stack. This allows the JavaScript runtime to keep track of which function is currently executing, and which functions are waiting to be executed.
+For example, consider the following code:
+
+
+function func1() {
+  console.log("In func1");
+  func2();
+}
+
+function func2() {
+  console.log("In func2");
+  func3();
+}
+
+function func3() {
+  console.log("In func3");
+}
+
+func1();
+
+
+When this code is executed, the call stack would look like this:
+1. func1 is called and added to the top of the stack
+2. func1 calls func2, which is added to the top of the stack
+3. func2 calls func3, which is added to the top of the stack
+4. func3 finishes executing, and is removed from the top of the stack
+5. func2 finishes executing, and is removed from the top of the stack
+6. func1 finishes executing, and is removed from the top of the stack
+The call stack allows the JavaScript runtime to keep track of the function calls and ensure that they are executed in the correct order. When an error occurs, the JavaScript runtime can use the call stack to determine where the error occurred, and provide a stack trace that can be used to debug the code.
+
+
+
+
+-----------------------------------------------------------------------------------
+
+
+
+
+The event loop is a mechanism in JavaScript that allows the execution of code to be scheduled, allowing it to run in the background while other code continues to run. It's responsible for processing events, such as user interactions, network requests, and timer events, and executing the associated callback functions.
+
+In JavaScript, code execution is performed in a single thread, which means that it can only execute one piece of code at a time. However, the event loop allows JavaScript to handle events as they come in, allowing it to seem like it's executing multiple pieces of code at the same time.
+
+Here's how the event loop works:
+
+The call stack: The JavaScript call stack is a data structure that keeps track of the function calls that are currently executing. When a function is called, it's added to the top of the call stack, and when it returns, it's removed from the top of the call stack.
+
+The message queue: The message queue is a queue of messages, each representing an event that needs to be processed. When an event is fired, such as a user clicking a button, a message is added to the message queue.
+
+The event loop: The event loop continuously checks the call stack to see if it's empty. If the call stack is empty, the event loop dequeues the next message from the message queue and adds its associated callback function to the call stack. This function is then executed.
+
+Continuation: Once the function finishes executing, it's removed from the call stack, and the event loop repeats the process, checking the call stack and processing the next message in the message queue, if any.
+
+In this way, the event loop allows JavaScript to handle events as they occur, executing code in a non-blocking manner. This means that JavaScript can continue to run and respond to events even while long-running operations, such as network requests, are taking place.
+
+The event loop is a fundamental concept in JavaScript, and understanding how it works is crucial for building performant and responsive applications.
+
