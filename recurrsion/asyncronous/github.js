@@ -3,8 +3,8 @@ const axios = require("axios");
 //     try {
 //         const res = await axios.get("https://api.github.com/users", {
 //             auth: {
-//                 username: 'VedanshuMalik',
-//                 password: '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'
+//                 username: '',
+//                 password: ''
 //             }
 //         });
 //         // let names = res.data.map(user => {

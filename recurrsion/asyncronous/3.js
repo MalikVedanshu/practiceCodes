@@ -9,8 +9,8 @@ const axios = require("axios");
 //     try {
 //         let res = await axios.get(url, {
 //             auth: {
-//                 username: 'VedanshuMalik',
-//                 password: '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'
+//                 username: '',
+//                 password: ''
 //             }
 //         })
 //         console.log(res.data);
@@ -24,8 +24,8 @@ const axios = require("axios");
 
 // axios.get(url, {
 //     auth: {
-//         username: 'VedanshuMalik',
-//         password: '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'
+//         username: '',
+//         password: ''
 //     }
 // })
 
@@ -48,8 +48,8 @@ let myData = () => {
     for(let i = 0; i < urls.length; i++) {
         axios.get(urls[i], {
             auth: {
-                username: 'VedanshuMalik',
-                password: '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'
+                username: '',
+                password: ''
             }
         })
             .then((res) => {

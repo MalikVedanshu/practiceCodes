@@ -3,8 +3,8 @@
 
 // axios.get(url, {
 //     auth: {
-//         username: 'VedanshuMalik',
-//         password: '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'
+//         username: '',
+//         password: ''
 //     }
 // })
 
