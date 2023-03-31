@@ -1,0 +1,23 @@
+// let str = 'Hello boy, how are you doin?'
+
+// str = str.split(" ");
+// for(let i = 0; i < str.length; i++) {
+//     str[i] = str[i].split("").reverse().join("");
+// }
+
+// console.log(str);
+
+
+let str = 'Hello boy, how are you doin?'
+let output = "";
+let temp = " ";
+for(let i = 0; i <= str.length; i++) {
+    if(str[i] === " " || str[i] === undefined) {
+        output += temp;
+        temp = " ";
+    } else {
+        temp = str[i] + temp;
+    }
+}
+
+console.log(output)

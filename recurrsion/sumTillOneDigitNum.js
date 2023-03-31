@@ -1,18 +1,16 @@
 
 
 function addTillOneDigits(num, start) {
-    if(num < 10) {
+
+    if(num < 1) {
         if(start < 10) {
             return start;
-        } else {
-            // return addTillOneDigits((start - (start % 10)) / 10, start % 10)
-            num = start;
-            start = 0;
-            return addTillOneDigits(num, start);
-
+        }
+        if( start >= 10) {
+            return addTillOneDigits(start, 0);
         }
     }
-    return addTillOneDigits((num - (num % 10)) / 10, start + num % 10)
+    return addTillOneDigits((num - (num % 10)) / 10, start + (num % 10))
 }
 
-console.log(addTillOneDigits(99, 0));
+console.log(addTillOneDigits(95, 0));

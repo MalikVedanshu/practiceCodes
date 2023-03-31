@@ -5,11 +5,11 @@
 // reverse array
 
 /*
-    [head, tail, head, tail, head, tail, tail, tail]
-    [head, tail, head, tail, head, head, tail, tail]
-    [head, tail, head, tail, tail, head, tail, tail]
-    [head, tail, head, tail, head, tail, head, tail]
-*/
+    [head, tail, head, tail]
+    [head, tail, head, tail]
+    [head, tail, head, tail]
+    [head, tail, head, tail]
+*/ 
 
 
 /*
